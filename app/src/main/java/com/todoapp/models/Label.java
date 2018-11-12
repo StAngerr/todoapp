@@ -6,34 +6,25 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
+@Table(name = "labels")
 @Entity
-@Table(name = "users")
-public class User {
-    public void setId(Long id) {
-        this.id = id;
-    }
-
+public class Label {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Size(max = 20)
     @Column(name = "name")
     private String name;
 
-    User() {
+    public String getName() {
+        return name;
     }
 
-    User(String name) {
-        this.id = id;
+    public void setName(String name) {
         this.name = name;
     }
 
-    public Long getId() {
-        return this.id;
-    }
-
-    public String getName() {
-        return this.name;
-    }
 }
