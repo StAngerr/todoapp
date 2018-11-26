@@ -1,4 +1,4 @@
-package com.todoapp;
+package com.todoapp.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Column;
@@ -12,17 +12,14 @@ import javax.persistence.MapsId;
 import javax.persistence.JoinColumn;
 
 @Entity
-@Table(name = "tasks")
+@Table(name = "TASKS")
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "labelId", nullable = false)
-    @MapsId
-    private Label label;
+    @Column(name = "label_id")
+    private Long labelId;
 
     @Column(name = "name")
     private String name;
@@ -35,13 +32,13 @@ public class Task {
         this.id = id;
     }
 
-    public Label getLabel() {
-        return label;
-    }
-
-    public void setLabel(Label label) {
-        this.label = label;
-    }
+//    public Label getLabel() {
+//        return label;
+//    }
+//
+//    public void setLabel(Label label) {
+//        this.label = label;
+//    }
 
     public String getName() {
         return name;

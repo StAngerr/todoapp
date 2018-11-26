@@ -1,4 +1,4 @@
-package com.todoapp;
+package com.todoapp.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ResponseBody;
 import javax.validation.Valid;
 
-import com.todoapp.LabelRepository;
-import com.todoapp.Label;
+import com.todoapp.repositories.LabelRepository;
+import com.todoapp.models.Label;
 
 @RestController
 public class LabelController {

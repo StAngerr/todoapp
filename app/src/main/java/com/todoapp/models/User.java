@@ -1,4 +1,4 @@
-package com.todoapp;
+package com.todoapp.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Column;
